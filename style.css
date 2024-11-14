@@ -14,7 +14,7 @@ html {
     --bg-gredient:linear-gradient(225.83deg, #00AAFF 11.34%, #96DCFF 35.49%, #0878FF 69.01%, #0878FF 98.59%);
     --bg-gredient1:linear-gradient(95.28deg, rgba(133, 214, 255, 0.8) 2.8%, #28B7FF 97.16%);
 
-    --primary-gold:#009af3;
+    --primary-gold:#0077ff;
     
     --blue1:#045098;
     --blue2:#0878FF;
@@ -278,11 +278,11 @@ li {
         min-height: 100vh;
         overflow-y: scroll;
         /* From https://css.glass */
-        background: rgb(255, 205, 54);
+        background: var(--primary-gold);
      
   
        
-        color: var(--black-font);
+        color: white;
         transition: width 0.3s ease;
     }
 
@@ -316,7 +316,7 @@ li {
 .hero-section{
     position: relative;
     height: 100vh; 
-    background-image: url(./projectphotos/bg.jpg);
+    background-image: url(./projectphotos/bgwebp.webp);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1416,6 +1416,7 @@ footer{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    
     width: 100%;
     min-height: 400px;
     
@@ -1630,4 +1631,25 @@ footer{
         flex-direction: column;
         align-items: flex-start;
     }
+ }
+
+ .projectsimagesholder{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 5%;
+ }
+ .projectsimagesholder img{
+    width: 30%;
+    height: auto;
+    margin: 1%;
+ }
+ @media (max-width:600px) {
+    .projectsimagesholder img{
+        width: 100%;
+        height: auto;
+        margin: 3%;
+     }
  }
