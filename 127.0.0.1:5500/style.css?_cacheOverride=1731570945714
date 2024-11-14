@@ -593,7 +593,7 @@ li {
         flex-direction: column;
     }
     .about-container .about-content{
-        width: 95%;
+        width: 9%;
         margin-bottom: 5%;
         padding: 0;
         display: flex;
@@ -922,9 +922,7 @@ footer{
     padding-block: 5%;
     padding-left: 100px;
     padding-right: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    
 }
 .footer-container h3{
     font-size: 1.8rem;
@@ -1049,7 +1047,6 @@ footer{
         justify-content: space-between;
         /* flex-direction: row-reverse; */
         row-gap: 50px;
-        width: 100%;
     }
     .footer-item{
         width: 50%;
@@ -1063,12 +1060,6 @@ footer{
     }
     .footer-container{
         padding-left: 20px;
-        width: 100%;
-    }
-    footer{
-        display: flex;
-        align-items: center;
-        flex-direction: column;
     }
     
 }
@@ -1100,10 +1091,10 @@ footer{
         width: 100%;
     }
     .footer-container{
-        width: 100%;
+        width: 60%;
     }
     .footer-wrapper{
-        width: 100%;
+        width: 40%;
     }
     .newsletter iframe{
         width: 100%;
@@ -1386,6 +1377,7 @@ footer{
     0% {
       -webkit-transform: translateX(-100px);
       transform: translateX(-100px);
+      opacity: 0;
     }
     100% {
       -webkit-transform: translateX(0);
@@ -1488,7 +1480,8 @@ footer{
     background-size: cover;
     width: 100%;
     color: var(--white-font);
-    
+    height: 80vh;
+    min-height: 500px;
     margin-block: 5%;
 }
 .qoutes-section .qoutes-container{
@@ -1556,25 +1549,6 @@ footer{
  .amenity p{
     margin-bottom: 30px;
  }
- .service.service1{
-    width: 45%;
-    padding: 3%;
-}
-.service.service2{
-    width: 45%;
-    padding: 3%;
-}
-.serviceiconholder.holder1{
-    width: 100%;
-    display: flex;
-    height: auto;
-}
-.serviceiconholder.holder1 img{
-    width: 200px;
-    display: flex;
-    height: auto;
-    margin-top: 2%;
-}
  @media (max-width:767px) {
     .contact-container{
         flex-direction: column;
@@ -1586,15 +1560,9 @@ footer{
         width: 100%;
         margin-top: 30px;
     }
-    .service.service1{
-        width: 100%;
-        padding: 3%;
+    .about-para{
+        width: 90%;
     }
-    .service.service2{
-        width: 100%;
-        padding: 3%;
-    }
-    
  }
  /* service-details-container */
  .service-details-section{
