@@ -1578,6 +1578,9 @@ footer{
     height: auto;
     margin-top: 2%;
 }
+/* .service2{
+    height: 700px;
+} */
  @media (max-width:767px) {
     .contact-container{
         flex-direction: column;
