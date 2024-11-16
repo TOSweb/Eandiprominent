@@ -316,7 +316,7 @@ li {
 .hero-section{
     position: relative;
     height: 100vh; 
-    background-image: url(./projectphotos/bgwebp.webp);
+    background-image: url(./projectphotos/JVL\ Page\ Industries/jvl3.webp);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -340,6 +340,7 @@ li {
 
 .hero-content{
     width: 50%;
+    background-color: rgba( 0, 0, 0, 0.45 );
     color: var(--black-font);
     text-align: center;
 }
@@ -1412,7 +1413,7 @@ footer{
 .about-hero-section{
     position: relative;
     height: 70vh; 
-    background-image: url(./assets/about-hero.png);
+    background-image: url(./projectphotos/JVL\ Page\ Industries/jvl-arial2.webp);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1421,6 +1422,7 @@ footer{
     min-height: 400px;
     
     color: var(--white-font);
+    
 }
 .about-hero-section .hero-content{
     color: var(--white-font);
@@ -1483,7 +1485,7 @@ footer{
 /* qoutes section*/
 .qoutes-section{
     padding-block: 30px;
-    background-image: url(./assets/about-bg-1.png);
+    background-image: url(./projectphotos/JVL\ Page\ Industries/jvl-arial.webp);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
