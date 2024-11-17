@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let isDragging = false;
     let startX = 0, startY = 0;
 
+    // Function to check if the device is touch-enabled
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
     // Function to center the menu
     const centerMenu = () => {
         const viewportWidth = window.innerWidth;
@@ -25,8 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
         menuContent.style.display = 'block';
     };
 
-    // Handle menu toggle with a click
-    menuButton.addEventListener('click', () => {
+    // Handle menu toggle
+    const toggleMenu = () => {
         if (!isDragging) { // Only toggle if it's not a drag
             if (menuContent.style.display === 'block') {
                 menuContent.style.display = 'none'; // Close the menu
@@ -34,15 +37,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 centerMenu(); // Open and center the menu
             }
         }
-    });
+    };
 
-    // Dragging functionality for desktop and mobile
+    // Dragging functionality
     const startDrag = (e) => {
         isDragging = true;
         const event = e.touches ? e.touches[0] : e; // Handle touch or mouse
         startX = event.clientX - floatingMenu.getBoundingClientRect().left;
         startY = event.clientY - floatingMenu.getBoundingClientRect().top;
-        floatingMenu.style.cursor = 'grabbing';
+
+        // Only set cursor for non-touch devices
+        if (!isTouchDevice) {
+            floatingMenu.style.cursor = 'grabbing';
+        }
+
         menuContent.style.display = 'none'; // Hide menu during drag
         e.preventDefault(); // Prevent scrolling
     };
@@ -67,17 +75,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const endDrag = () => {
         isDragging = false;
-        floatingMenu.style.cursor = 'grab';
+
+        // Only reset cursor for non-touch devices
+        if (!isTouchDevice) {
+            floatingMenu.style.cursor = 'grab';
+        }
     };
 
     // Attach mouse and touch events
+    menuButton.addEventListener('click', toggleMenu);
     floatingMenu.addEventListener('mousedown', startDrag);
     window.addEventListener('mousemove', duringDrag);
     window.addEventListener('mouseup', endDrag);
 
-    floatingMenu.addEventListener('touchstart', startDrag);
-    window.addEventListener('touchmove', duringDrag);
-    window.addEventListener('touchend', endDrag);
+    floatingMenu.addEventListener('touchstart', startDrag, { passive: false });
+    window.addEventListener('touchmove', duringDrag, { passive: false });
+    window.addEventListener('touchend', endDrag, { passive: false });
 
     // Close menu when clicking outside
     window.addEventListener('click', (e) => {
