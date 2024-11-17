@@ -5,23 +5,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let isDragging = false;
     let startX = 0, startY = 0;
-    let offsetX = 0, offsetY = 0;
+
+    // Function to center the menu
+    const centerMenu = () => {
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+
+        // Menu dimensions
+        const menuWidth = menuContent.offsetWidth || 300; // Fallback for width
+        const menuHeight = menuContent.offsetHeight || 200; // Fallback for height
+
+        // Calculate center positions
+        const left = (viewportWidth - menuWidth) / 2;
+        const top = (viewportHeight - menuHeight) / 2;
+
+        // Apply positions
+        menuContent.style.left = `${left}px`;
+        menuContent.style.top = `${top}px`;
+        menuContent.style.display = 'block';
+    };
 
     // Handle menu toggle with a click
-    menuButton.addEventListener('click', (e) => {
+    menuButton.addEventListener('click', () => {
         if (!isDragging) { // Only toggle if it's not a drag
             if (menuContent.style.display === 'block') {
-                menuContent.style.display = 'none';
+                menuContent.style.display = 'none'; // Close the menu
             } else {
-                // Center the menu on the screen
-                const viewportWidth = window.innerWidth;
-                const viewportHeight = window.innerHeight;
-                const menuWidth = menuContent.offsetWidth;
-                const menuHeight = menuContent.offsetHeight;
-
-                menuContent.style.left = `${(viewportWidth - menuWidth) / 2}px`;
-                menuContent.style.top = `${(viewportHeight - menuHeight) / 2}px`;
-                menuContent.style.display = 'block';
+                centerMenu(); // Open and center the menu
             }
         }
     });
@@ -34,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         startY = event.clientY - floatingMenu.getBoundingClientRect().top;
         floatingMenu.style.cursor = 'grabbing';
         menuContent.style.display = 'none'; // Hide menu during drag
+        e.preventDefault(); // Prevent scrolling
     };
 
     const duringDrag = (e) => {
@@ -49,6 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
             floatingMenu.style.left = `${Math.max(0, Math.min(x, maxX))}px`;
             floatingMenu.style.top = `${Math.max(0, Math.min(y, maxY))}px`;
             floatingMenu.style.position = 'fixed';
+
+            e.preventDefault(); // Prevent scrolling
         }
     };
 
@@ -69,7 +82,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close menu when clicking outside
     window.addEventListener('click', (e) => {
         if (!floatingMenu.contains(e.target) && !menuContent.contains(e.target)) {
-            menuContent.style.display = 'none';
+            menuContent.style.display = 'none'; // Close menu
+        }
+    });
+
+    // Recenter the menu on window resize (useful for orientation changes)
+    window.addEventListener('resize', () => {
+        if (menuContent.style.display === 'block') {
+            centerMenu();
         }
     });
 });

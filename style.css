@@ -1834,14 +1834,14 @@ footer{
 
 .menu-content {
     display: none;
-    position: fixed; /* Center positioning is managed dynamically */
+    position: fixed; /* Fixed ensures it's relative to the viewport */
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     text-align: left;
-    padding: 10px 0;
-    width: 300px; /* Adjust width as needed */
+    width: 90%; /* Responsive width for mobile screens */
+    max-width: 300px; /* Limit maximum width */
     z-index: 1050;
 }
 
