@@ -486,7 +486,7 @@ li {
 .about-container{
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 50px;
     /* width: 100%; */
     justify-content: space-between;
 }
@@ -495,20 +495,23 @@ li {
     width: 100%;
     height:100%;
     object-fit: cover;
+    border-radius: 25px;
     
 }
 
 .about-section .img-container{
-    width: 30%;
+    width: 50%;
     /* position:relative; */
     height: 100%;
     font-size: 0;
+    
 }
 .about-container .img-wrapper{
     width: 100%;
     /* margin-right: auto; */
     /* position: relative; */
     font-size: 0;
+    
    
     /* bottom: 0; */
     /* left: -10%; */
@@ -1651,10 +1654,210 @@ footer{
     height: auto;
     margin: 1%;
  }
- @media (max-width:600px) {
+ @media (max-width:500px) {
     .projectsimagesholder img{
         width: 100%;
         height: auto;
         margin: 3%;
      }
  }
+
+ .team{
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+ }
+ .team h2{
+    color: white;
+    font-size: 34px;
+    margin: 3%;
+ }
+ .teamcardholder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin-bottom: 3%;
+ }
+.teamcard{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2%;;
+}
+.teamcardimage{
+    width: 100%;
+    height: 250px;
+    
+}
+.teamcardimage img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+}
+.teamcardcontent{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.teamcardcontent h3{
+    color: white;
+    font-size: 24px;
+}
+.teamcardcontent p{
+    color: white;
+}
+@media (max-width:500px) {
+    .teamcardholder{
+        flex-direction: column;
+        margin-top: 3%;
+        margin-bottom: 3%;
+    }
+    .teamcard{
+        width: 100%;
+    }
+ }
+ .projectdetails{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 3%;
+ }
+ .detailholder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 90%;
+ }
+ .headingholder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2%;
+ }
+ .headingholder h1{
+    font-size: 34px;
+    font-weight: 500;
+    color: var(--primary-gold);
+ }
+ .otherdetails{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    border-top: 1px solid #045098;
+    border-bottom: 1px solid #045098;
+ }
+ .otherdetailsholder{
+    width: 20%;
+    margin: 1%;
+ }
+ .otherdetailsholder h5{
+    color: var(--primary-gold);
+    font-size: 18px;
+    font-weight: 500;
+    margin: 2% 0% 2% 0%;
+ }
+ .dropdown-content {
+    display: none;
+    margin: 3% 0% 3% 0%;
+    
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+    
+    color: var(--primary-gold);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+
+.dropdown-content p {
+    background-color: #f1f1f1;
+    padding: 15px;
+    
+    border-radius: 5px;
+}
+
+ @media (max-width:500px) {
+    .otherdetails{
+        flex-direction: column;
+        padding: 2% 0% 2% 0%;
+    }
+    .otherdetailsholder{
+        width: 100%;
+        margin: 3% 0% 3% 0%;
+    }
+ }
+
+ /* Style the floating menu */
+.floating-menu {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    cursor: grab; /* Indicate draggable */
+}
+
+.floating-menu:active {
+    cursor: grabbing; /* Indicate when dragging */
+}
+
+#menuButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+#menuButton:hover {
+    background-color: #0056b3;
+}
+
+.menu-content {
+    display: none;
+    position: fixed; /* Center positioning is managed dynamically */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: left;
+    padding: 10px 0;
+    width: 300px; /* Adjust width as needed */
+    z-index: 1050;
+}
+
+.menu-content a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+.menu-content a:last-child {
+    border-bottom: none;
+}
+
+.menu-content a:hover {
+    background-color: #f1f1f1;
+}
