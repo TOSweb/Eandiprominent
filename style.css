@@ -166,7 +166,7 @@ li {
     /* font-weight: 700; */
     text-transform: capitalize;
     /* From https://css.glass */
-    background: rgba(208, 207, 207, 0.263);
+    background: #fff;
     border-bottom: 1px solid rgba( 255, 255, 255, 0.18 );
     /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
     backdrop-filter: blur( 18px );
@@ -178,8 +178,8 @@ li {
 
 .logo img {
     height: auto;
-    width: 150px;
-    margin-top: 70px;
+    width: 120px;
+    /* margin-top: 70px; */
     object-fit: cover;
     object-position: center;
 }
