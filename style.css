@@ -219,7 +219,11 @@ li {
         padding: 10px;
         height: 70px;
     }
-
+    .logo img{
+        width: 80px;
+        height: auto;
+        margin-top: 1%;
+    }
     .menu-icon {
         display: block;
     }
@@ -922,13 +926,16 @@ footer{
 
 .footer-container{
     width: 40%;
-    background-color: var(--primary-gold);
+    background-color: #fff;
     padding-block: 5%;
     padding-left: 100px;
     padding-right: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.img-container{
+    width: 50%;
 }
 .footer-container h3{
     font-size: 1.8rem;
@@ -984,6 +991,10 @@ footer{
      width: 200px;
      height: auto;
      object-fit: cover;
+}
+.footer-logo{
+    width: 200px;
+    height: auto;
 }
 .footer-item li a .icon-wrapper{
     width: 30px;
@@ -1804,6 +1815,10 @@ footer{
     .otherdetailsholder{
         width: 100%;
         margin: 3% 0% 3% 0%;
+    }
+    .why{
+        width: 100%;
+        margin: 1%;
     }
  }
 
