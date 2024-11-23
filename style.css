@@ -663,14 +663,14 @@ li {
 .services-wrapper{
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-wrap: wrap;
-    gap: 30px;
+    
     margin-top: 5%;
-    width: 90%;
+    width: 95%;
 }
 .service{
-    width: calc(33.333% - 5%);
+    width: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1790,6 +1790,10 @@ footer{
     padding: 15px;
     
     border-radius: 5px;
+}
+.why{
+    width: 30%;
+    margin: 1%;
 }
 
  @media (max-width:500px) {
