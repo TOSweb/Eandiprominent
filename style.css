@@ -1579,18 +1579,30 @@ footer{
 }
 .service.service2{
     width: 45%;
-    padding: 3%;
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+.service2 h4{
+    margin: 2%;
+}
+.service2 p{
+    margin: 3%;
 }
 .serviceiconholder.holder1{
     width: 100%;
     display: flex;
     height: auto;
+    margin: 2%;
 }
 .serviceiconholder.holder1 img{
-    width: 200px;
+    width: 100%;
     display: flex;
     height: auto;
-    margin-top: 2%;
+    
 }
 /* .service2{
     height: 700px;
@@ -1612,7 +1624,7 @@ footer{
     }
     .service.service2{
         width: 100%;
-        padding: 3%;
+        
     }
     
  }
@@ -1690,12 +1702,13 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     width: 90%;
     margin-bottom: 3%;
     height: auto;
  }
 .teamcard{
-    width: 30%;
+    width: 20%;
     display: flex;
     align-items: center;
     justify-content: center;

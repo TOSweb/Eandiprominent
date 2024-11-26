@@ -1,12 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const toggleButton = document.querySelector('.dropdown-toggle');
-    const dropdownContent = document.querySelector('.dropdown-content');
+    const toggleButtons = document.querySelectorAll('.dropdown-toggle');
+    
+    toggleButtons.forEach(function (toggleButton) {
+        const dropdownContent = toggleButton.nextElementSibling;
 
-    toggleButton.addEventListener('click', function () {
-        if (dropdownContent.style.display === 'none' || dropdownContent.style.display === '') {
-            dropdownContent.style.display = 'block';
-        } else {
-            dropdownContent.style.display = 'none';
-        }
+        toggleButton.addEventListener('click', function () {
+            if (dropdownContent.style.display === 'none' || dropdownContent.style.display === '') {
+                dropdownContent.style.display = 'block';
+            } else {
+                dropdownContent.style.display = 'none';
+            }
+        });
     });
 });
